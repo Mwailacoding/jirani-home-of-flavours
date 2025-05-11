@@ -24,112 +24,108 @@ function Navbar() {
           JIRANI'S HOME OF FLAVOURS
         </Link>
 
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button 
+          className="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
-          <div className="navbar-nav ms-auto align-items-center">
-            <Link
-              className="nav-link mx-2 position-relative"
-              to="/"
-              style={{
-                fontSize: '1.1rem',
-                fontWeight: '500',
-                color: '#f8f9fa',
-                transition: 'all 0.3s ease',
-                padding: '0.5rem 1rem',
-                borderRadius: '4px'
-              }}
-              activeStyle={{
-                color: '#fff',
-                background: 'rgba(255, 255, 255, 0.1)'
-              }}
-            >
-              <i className="fas fa-home me-1"></i> Home
-            </Link>
+          <ul className="navbar-nav ms-auto align-items-center">
+            <li className="nav-item">
+              <Link
+                className="nav-link mx-2 position-relative"
+                to="/"
+                style={{
+                  fontSize: '1.1rem',
+                  fontWeight: '500',
+                  color: '#f8f9fa',
+                  transition: 'all 0.3s ease',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '4px'
+                }}
+              >
+                <i className="fas fa-home me-1"></i> Home
+              </Link>
+            </li>
 
-            <Link
-              className="nav-link mx-2 position-relative"
-              to="/aboutus"
-              style={{
-                fontSize: '1.1rem',
-                fontWeight: '500',
-                color: '#f8f9fa',
-                transition: 'all 0.3s ease',
-                padding: '0.5rem 1rem',
-                borderRadius: '4px'
-              }}
-              activeStyle={{
-                color: '#fff',
-                background: 'rgba(255, 255, 255, 0.1)'
-              }}
-            >
-              <i className="fas fa-info-circle me-1"></i> About Us
-            </Link>
+            <li className="nav-item">
+              <Link
+                className="nav-link mx-2 position-relative"
+                to="/aboutus"
+                style={{
+                  fontSize: '1.1rem',
+                  fontWeight: '500',
+                  color: '#f8f9fa',
+                  transition: 'all 0.3s ease',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '4px'
+                }}
+              >
+                <i className="fas fa-info-circle me-1"></i> About Us
+              </Link>
+            </li>
 
             {user && (
               <>
-                <Link
-                  className="nav-link mx-2 position-relative"
-                  to="/addgroceries"
-                  style={{
-                    fontSize: '1.1rem',
-                    fontWeight: '500',
-                    color: '#f8f9fa',
-                    transition: 'all 0.3s ease',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '4px'
-                  }}
-                  activeStyle={{
-                    color: '#fff',
-                    background: 'rgba(255, 255, 255, 0.1)'
-                  }}
-                >
-                  <i className="fas fa-plus-circle me-1"></i> Add Products
-                </Link>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link mx-2 position-relative"
+                    to="/addgroceries"
+                    style={{
+                      fontSize: '1.1rem',
+                      fontWeight: '500',
+                      color: '#f8f9fa',
+                      transition: 'all 0.3s ease',
+                      padding: '0.5rem 1rem',
+                      borderRadius: '4px'
+                    }}
+                  >
+                    <i className="fas fa-plus-circle me-1"></i> Add Products
+                  </Link>
+                </li>
 
-               
-
-                {/* Add the Order Status Button here, conditionally if needed */}
-                <PaymentSuccess />
+                <li className="nav-item">
+                  <PaymentSuccess />
+                </li>
               </>
             )}
 
-            {user ? (
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-               
-              </motion.div>
-            ) : (
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  className="nav-link btn rounded-pill px-4 ms-3 position-relative overflow-hidden"
-                  to="/addgroceries"
-                  style={{
-                    fontWeight: '500',
-                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    border: 'none',
-                    transition: 'all 0.3s ease',
-                    color: 'white'
-                  }}
+            {!user && (
+              <li className="nav-item">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <i className="fas fa-cart-plus me-1"></i> ADD GROCERIES
-                  <motion.span
-                    className="position-absolute top-0 left-0 w-full h-full bg-white opacity-0"
-                    style={{ borderRadius: '50px' }}
-                    whileHover={{ opacity: 0.2 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </Link>
-              </motion.div>
+                  <Link
+                    className="nav-link btn rounded-pill px-4 ms-3 position-relative overflow-hidden"
+                    to="/addgroceries"
+                    style={{
+                      fontWeight: '500',
+                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                      border: 'none',
+                      transition: 'all 0.3s ease',
+                      color: 'white'
+                    }}
+                  >
+                    <i className="fas fa-cart-plus me-1"></i> ADD GROCERIES
+                    <motion.span
+                      className="position-absolute top-0 left-0 w-full h-full bg-white opacity-0"
+                      style={{ borderRadius: '50px' }}
+                      whileHover={{ opacity: 0.2 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </Link>
+                </motion.div>
+              </li>
             )}
-          </div>
+          </ul>
         </div>
       </div>
     </nav>
