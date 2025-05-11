@@ -99,7 +99,7 @@ const Mpesapayment = () => {
       if (paymentCompleted && countdown > 0) {
           timer = setTimeout(() => {
               setCountdown(countdown - 1);
-          }, 9000);
+          }, 5000);
       } else if (paymentCompleted && countdown === 0) {
           navigate('/');
       }
@@ -112,7 +112,7 @@ const Mpesapayment = () => {
       if (showWaitingMessage && waitingTime > 0) {
           timer = setTimeout(() => {
               setWaitingTime(waitingTime - 1);
-          }, 5000);
+          }, 2000);
       } else if (showWaitingMessage && waitingTime === 0) {
           completePayment();
           setShowWaitingMessage(false);
