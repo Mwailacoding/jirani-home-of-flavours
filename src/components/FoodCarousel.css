@@ -1,0 +1,434 @@
+/* Main container */
+.food-carousel-container {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.carousel-title {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.carousel-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #e67e22;
+    border-radius: 3px;
+}
+
+.view-all-btn {
+    background: transparent;
+    border: 2px solid #e67e22;
+    color: #e67e22;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.view-all-btn:hover {
+    background: #e67e22;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+}
+
+/* Slide container */
+.food-slide {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin: 0 15px;
+    height: 580px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.food-slide:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Image styling */
+.food-image-container {
+    position: relative;
+    height: 55%;
+    overflow: hidden;
+}
+
+.food-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.food-slide:hover .food-image {
+    transform: scale(1.05);
+}
+
+/* Promo badge */
+.promo-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ff4757, #e84118);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: rotate(5deg);
+    animation: pulse 2s infinite;
+    z-index: 2;
+}
+
+@keyframes pulse {
+    0% { transform: rotate(5deg) scale(1); }
+    50% { transform: rotate(5deg) scale(1.05); }
+    100% { transform: rotate(5deg) scale(1); }
+}
+
+/* Dietary tags */
+.dietary-tags {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.dietary-tag {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    text-transform: capitalize;
+    background: #2ecc71;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dietary-tag.vegetarian {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.dietary-tag.vegan {
+    background: linear-gradient(135deg, #27ae60, #219653);
+}
+
+.dietary-tag.gluten-free {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+}
+
+/* Food info section */
+.food-info {
+    padding: 25px;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.food-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.food-title {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 700;
+}
+
+.prep-time {
+    background: #f8f9fa;
+    color: #7f8c8d;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.food-description {
+    color: #7f8c8d;
+    margin: 15px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.food-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.food-price {
+    font-size: 1.6rem;
+    color: #e67e22;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.order-button {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+}
+
+.order-button:hover {
+    background: linear-gradient(135deg, #d35400, #e67e22);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+}
+
+.order-button:active {
+    transform: translateY(1px);
+}
+
+.cart-icon {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+
+/* Star Rating Styles */
+.star-rating {
+    display: flex;
+    align-items: center;
+    margin: 5px 0 15px;
+}
+
+.stars-container {
+    position: relative;
+    display: inline-flex;
+}
+
+.stars-empty,
+.stars-filled {
+    display: flex;
+}
+
+.stars-filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.stars-container svg {
+    margin-right: 3px;
+}
+
+.rating-text {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.review-count {
+    margin-left: 8px;
+    color: #95a5a6;
+    font-size: 0.85rem;
+}
+
+/* Navigation arrows */
+.food-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.food-nav-arrow:hover {
+    background: white !important;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.food-nav-arrow svg {
+    width: 24px;
+    height: 24px;
+    fill: #e67e22;
+    transition: all 0.3s ease;
+}
+
+.food-nav-arrow:hover svg {
+    fill: #d35400;
+}
+
+.food-nav-arrow-left {
+    left: 15px;
+}
+
+.food-nav-arrow-right {
+    right: 15px;
+}
+
+/* Dots indicator */
+.carousel .control-dots {
+    bottom: 25px;
+}
+
+.carousel .control-dots .dot {
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: none;
+    width: 12px;
+    height: 12px;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+}
+
+.carousel .control-dots .dot.selected {
+    background: #e67e22;
+    width: 35px;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .food-slide {
+        height: 540px;
+    }
+    
+    .food-image-container {
+        height: 50%;
+    }
+    
+    .food-info {
+        height: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .food-slide {
+        height: 500px;
+        margin: 0 10px;
+    }
+    
+    .food-image-container {
+        height: 45%;
+    }
+    
+    .food-info {
+        height: 55%;
+        padding: 20px;
+    }
+    
+    .food-title {
+        font-size: 1.4rem;
+    }
+    
+    .food-description {
+        font-size: 0.95rem;
+    }
+    
+    .food-nav-arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .food-slide {
+        height: 480px;
+    }
+    
+    .food-image-container {
+        height: 40%;
+    }
+    
+    .food-info {
+        height: 60%;
+        padding: 15px;
+    }
+    
+    .order-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .food-price {
+        font-size: 1.4rem;
+    }
+    
+    .dietary-tag {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    
+    .promo-badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .carousel-title {
+        font-size: 1.8rem;
+    }
+}

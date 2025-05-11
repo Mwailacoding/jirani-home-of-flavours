@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#0277BD"
+    tools:context=".Aboutus">
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aboutus"
+        android:textAlignment="center"
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+        android:text="At goshen foodstore, we believe that good food brings people together. Since opening our doors in [Year], we’ve been committed to offering fresh, high-quality groceries at fair prices—right in the heart of our community.
+
+From locally-sourced produce to your favorite everyday essentials, we work hard to keep our shelves stocked with the foods you love and the brands you trust. Whether you're planning a big family dinner or just grabbing a quick snack, our friendly team is here to help you find what you need.
+
+We’re proud to support local farmers, small businesses, and sustainable practices that keep our community strong and our planet healthy. Thank you for making us your go-to neighborhood grocery store.
+
+Stop by and say hello—we’re always happy to see you!  Best regards minister hamilton"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="listen"
+        android:id="@+id/listen"/>
+
+
+        
+        
+
+</LinearLayout>

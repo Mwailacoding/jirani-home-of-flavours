@@ -1,0 +1,14 @@
+2025-05-06 06:52:03,867 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.101:5000
+2025-05-06 06:52:03,871 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 06:52:03,876 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 06:52:05,118 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 06:52:05,124 - werkzeug - INFO -  * Debugger PIN: 463-630-892
+2025-05-06 06:52:21,749 - werkzeug - INFO - 192.168.1.101 - - [06/May/2025 06:52:21] "[33mGET / HTTP/1.1[0m" 404 -
+2025-05-06 06:52:22,024 - werkzeug - INFO - 192.168.1.101 - - [06/May/2025 06:52:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-06 06:53:31,012 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 06:53:31] "[33mPOST /api/get_products/ails HTTP/1.1[0m" 404 -
+2025-05-06 06:53:32,834 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 06:53:32] "[33mPOST /api/get_products/ails HTTP/1.1[0m" 404 -
+2025-05-06 06:53:47,169 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 06:53:47] "[33mPOST /api/get_products-details HTTP/1.1[0m" 404 -
+2025-05-06 06:53:48,713 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 06:53:48] "[33mPOST /api/get_products-details HTTP/1.1[0m" 404 -

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4527A0"
+    tools:context=".SignupActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Signup"
+            android:fontFamily="cursive"
+            android:textSize="40sp"
+            android:textAlignment="center"
+            android:textColor="#0B0101"
+            android:background="@drawable/shape"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Username"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/username"
+            android:id="@+id/username"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Email"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="textEmailAddress"
+            android:drawableLeft="@drawable/email"
+            android:id="@+id/email"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Phone"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/phone"
+            android:inputType="phone"
+            android:id="@+id/phone"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Create a Strong PASSWORD"
+            android:drawableLeft="@drawable/password"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:inputType="textPassword"
+            android:id="@+id/password"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGNUP"
+             android:id="@+id/signup"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
