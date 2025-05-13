@@ -248,6 +248,15 @@ const Signin = () => {
                             </Link>
                         </p>
                         <p>
+            Admin user?{' '}
+            <button 
+              className="btn btn-link p-0" 
+              onClick={() => navigate('/admin/signin')}
+            >
+              Admin login
+            </button>
+          </p>
+                        <p>
                         <Link to="/forgot-password" className="auth-link">
     <FiKey className="link-icon" /> Forgot password?
 </Link>

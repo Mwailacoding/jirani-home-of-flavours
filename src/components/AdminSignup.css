@@ -1,0 +1,322 @@
+.admin-signup-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .back-button {
+    background: none;
+    border: none;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .back-button:hover {
+    color: #333;
+  }
+  
+  .registration-form, .payment-section {
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .form-group input:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  }
+  
+  .is-invalid {
+    border-color: #dc3545 !important;
+  }
+  
+  .invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  .phone-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .phone-input .prefix {
+    padding: 0.75rem;
+    background: #f8f9fa;
+    color: #666;
+  }
+  
+  .phone-input input {
+    flex: 1;
+    border: none;
+    border-radius: 0;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+  
+  .btn-primary:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .fee-amount {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745;
+    margin: 1rem 0 2rem;
+  }
+  
+  .payment-instructions {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .payment-instructions .icon {
+    color: #28a745;
+    margin-bottom: 1rem;
+  }
+  
+  .phone-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  
+  .note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+  }
+  
+  .payment-details {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .detail-row:last-child {
+    border-bottom: none;
+  }
+  
+  .pay-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .pay-button:hover {
+    background: #218838;
+  }
+  
+  .pay-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .payment-processing {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .spinner {
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+    color: #667eea;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .instruction {
+    color: #666;
+    margin-top: 1rem;
+  }
+  
+  .payment-success {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .success-icon {
+    color: #28a745;
+    margin-bottom: 1rem;
+  }
+  
+  .receipt-details {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: left;
+  }
+  
+  .receipt-details p {
+    margin: 0.5rem 0;
+  }
+  
+  .payment-failed {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .failure-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .failure-icon {
+    color: #dc3545;
+    margin-bottom: 1rem;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-weight: 500;
+    margin: 1rem 0;
+  }
+  
+  .support-message {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .retry-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .retry-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .retry-button.primary {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .retry-button.primary:hover {
+    background: #c82333;
+  }
+  
+  .retry-button.secondary {
+    background: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  .retry-button.secondary:hover {
+    background: #e9ecef;
+  }
+  
+  .alert {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+  }
+  .already-have-account {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+  }
+  
+  .already-have-account a {
+    color: #4a89dc;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .already-have-account a:hover {
+    text-decoration: underline;
+  }

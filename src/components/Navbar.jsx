@@ -74,22 +74,8 @@ function Navbar() {
 
             {user && (
               <>
-                <li className="nav-item">
-                  <Link
-                    className="nav-link mx-2 position-relative"
-                    to="/addgroceries"
-                    style={{
-                      fontSize: '1.1rem',
-                      fontWeight: '500',
-                      color: '#f8f9fa',
-                      transition: 'all 0.3s ease',
-                      padding: '0.5rem 1rem',
-                      borderRadius: '4px'
-                    }}
-                  >
-                    <i className="fas fa-plus-circle me-1"></i> Add Products
-                  </Link>
-                </li>
+               
+                
 
                 <li className="nav-item">
                   <PaymentSuccess />

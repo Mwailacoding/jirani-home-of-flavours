@@ -3,49 +3,102 @@ import { createContext, useContext, useState, useEffect } from 'react';
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
-  
-  // Check for existing user session on initial load
+  const [authState, setAuthState] = useState({
+    user: null,
+    admin: null,
+    isLoading: true
+  });
+
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
+    const initializeAuth = () => {
       try {
-        setUser(JSON.parse(storedUser));
+        const user = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        const admin = localStorage.getItem('admin');
+        const adminToken = localStorage.getItem('adminToken');
+        
+        if (user && token) {
+          setAuthState({
+            user: JSON.parse(user),
+            admin: null,
+            isLoading: false
+          });
+        } else if (admin && adminToken) {
+          setAuthState({
+            user: null,
+            admin: JSON.parse(admin),
+            isLoading: false
+          });
+        } else {
+          setAuthState({
+            user: null,
+            admin: null,
+            isLoading: false
+          });
+        }
       } catch (error) {
-        console.error("Failed to parse user data", error);
-        localStorage.removeItem('user');
+        console.error("Auth initialization error:", error);
+        clearAuth();
+        setAuthState({
+          user: null,
+          admin: null,
+          isLoading: false
+        });
       }
-    }
+    };
+
+    initializeAuth();
   }, []);
 
-  const login = (userData) => {
-    // Ensure email is included in user data
-    if (!userData.email) {
-      throw new Error("Email is required for user authentication");
-    }
-    
-    const completeUserData = {
-      ...userData,
-      // Add any additional user fields you need
-    };
-    
-    setUser(completeUserData);
-    localStorage.setItem('user', JSON.stringify(completeUserData));
+  const clearAuth = () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    localStorage.removeItem('admin');
+    localStorage.removeItem('adminToken');
+  };
+
+  const login = (userData, token) => {
+    localStorage.setItem('user', JSON.stringify(userData));
+    localStorage.setItem('token', token);
+    setAuthState({
+      user: userData,
+      admin: null,
+      isLoading: false
+    });
+  };
+
+  const adminLogin = (adminData, token) => {
+    localStorage.setItem('admin', JSON.stringify(adminData));
+    localStorage.setItem('adminToken', token);
+    setAuthState({
+      user: null,
+      admin: adminData,
+      isLoading: false
+    });
   };
   
   const logout = () => {
-    setUser(null);
-    localStorage.removeItem('user');
+    clearAuth();
+    setAuthState({
+      user: null,
+      admin: null,
+      isLoading: false
+    });
+  };
+
+  const value = {
+    ...authState,
+    login,
+    adminLogin,
+    logout,
+    isAuthenticated: !!authState.user || !!authState.admin,
+    isUser: !!authState.user,
+    isAdmin: !!authState.admin
   };
 
   return (
-    <AuthContext.Provider value={{ 
-      user, 
-      login, 
-      logout,
-      isAuthenticated: !!user 
-    }}>
-      {children}
+    <AuthContext.Provider value={value}>
+      {!authState.isLoading && children}
     </AuthContext.Provider>
   );
 }

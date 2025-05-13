@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { Analytics } from "@vercel/analytics/react"
 import { FiSearch, FiX, FiHeart, FiShoppingCart, FiEye, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaHeart, FaStar, FaRegStar, FaFacebookF, FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
 import FoodCarousel from "./FoodCarousel";
