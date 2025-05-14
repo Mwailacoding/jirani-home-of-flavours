@@ -54,6 +54,13 @@ function UserProfile() {
   const dropdownRef = useRef(null);
 
   // Toggle theme
+  /**
+   * Toggles the current theme between 'light' and 'dark'.
+   * Updates the state by switching to the opposite theme.
+   *
+   * @function toggleTheme
+   * @returns {void}
+   */
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
@@ -1308,6 +1315,9 @@ function UserProfile() {
           </motion.div>
         )}
       </AnimatePresence>
+      <button onClick={toggleTheme}>
+    Toggle Theme
+</button>
     </div>
   );
 }

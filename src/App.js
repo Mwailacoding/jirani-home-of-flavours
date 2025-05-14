@@ -60,7 +60,7 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="App">
-          <header className="App-header bg-primary py-3 text-white">
+          <header className="App-header  py-3 text-white">
             <div className="container d-flex justify-content-between align-items-center">
               <h1 className="m-0">Jirani's Flavours of Home</h1>
               <UserProfile />
