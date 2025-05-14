@@ -89,25 +89,8 @@ function Navbar() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Link
-                    className="nav-link btn rounded-pill px-4 ms-3 position-relative overflow-hidden"
-                    to="/addgroceries"
-                    style={{
-                      fontWeight: '500',
-                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                      border: 'none',
-                      transition: 'all 0.3s ease',
-                      color: 'white'
-                    }}
-                  >
-                    <i className="fas fa-cart-plus me-1"></i> ADD GROCERIES
-                    <motion.span
-                      className="position-absolute top-0 left-0 w-full h-full bg-white opacity-0"
-                      style={{ borderRadius: '50px' }}
-                      whileHover={{ opacity: 0.2 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </Link>
+                 
+                    
                 </motion.div>
               </li>
             )}
